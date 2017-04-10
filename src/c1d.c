@@ -14,8 +14,8 @@ int		pm_c1d_contains(char *str, char c)
   while (str[i] != '\0')
     {
       if (str[i] == c)
-	return (1);
+	return (i);
       i++;
     }
-  return (0);
+  return (-1);
 }
