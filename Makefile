@@ -12,7 +12,8 @@ RM =		rm -f
 
 LIB =		libptr_manip.a
 
-SRC =		src/c2d.c
+SRC =		src/c2d.c	\
+		src/c1d.c
 
 OBJ =		$(SRC:.c=.o)
 
