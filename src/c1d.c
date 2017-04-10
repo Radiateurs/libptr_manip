@@ -60,7 +60,30 @@ c1d		pm_c1d_concat_nproof(c1d dest, const c1d src)
   return (dest);
 }
 
-c1d		pm_c1d_substr(c1d src, const char delim)
+c1d		pm_c1d_substr_copy(const c1d src, const char delim)
 {
   return (strndup(src, pm_c1d_contains(src, delim)));
+}
+
+c1d		pm_c1d_cut_at_copy(const c1d src, const char delim)
+{
+  return (strdup(src + pm_c1d_contains(src, delim)));
+}
+
+c1d		pm_c1d_cut_at(c1d src, const char delim)
+{
+  c1d		ret;
+
+  ret = strdup(src + pm_c1d_contains(src, delim));
+  free(src);
+  return (ret);
+}
+
+c1d		pm_c1d_substr(c1d src, const char delim)
+{
+  c1d		to_ret;
+
+  to_ret = pm_c1d_substr_copy(src, delim);
+  src = pm_c1d_cut_at(src, delim);
+  return (to_ret);
 }
