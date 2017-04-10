@@ -14,6 +14,9 @@
 
 typedef		char* c1d;
 
-int		pm_c1d_contains(char *str, char c);
+int		pm_c1d_contains(c1d str, char c);
+c1d		pm_c1d_copy(const c1d copy);
+c1d		pm_c1d_add_fields(c1d dest, int fields);
+c1d		pm_c1d_concat_nproof(c1d dest; const src src);
 
 #endif		/* __C1D_H__ */
