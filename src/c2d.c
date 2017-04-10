@@ -34,7 +34,7 @@ c2d		pm_c2d_copy(c2d origin)
   int		i = 0;
   int		length;
 
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   length = pm_c2d_length(origin);
   if (!(dest = malloc(sizeof(*dest) * length + 1)))
@@ -54,7 +54,7 @@ c2d		pm_c2d_copy_add_fields_top(c2d origin, int fields)
   int		i = 0;
   int		length;
 
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   length = pm_c2d_length(origin);
   if (!(dest = malloc(sizeof(*dest) * (length + 1 + fields))))
@@ -80,7 +80,7 @@ c2d		pm_c2d_copy_add_fields_down(c2d origin, int fields)
   int		i = 0;
   int		length;
   
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   length = pm_c2d_length(origin);
   if (!(dest = malloc(sizeof(*dest) * (length + 1 + fields))))
@@ -102,7 +102,7 @@ c2d		pm_c2d_add_field_top(c2d origin)
 {
   c2d		dest;
 
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   if (!(dest = pm_c2d_copy_add_fields_top(origin, 1)))
     return (origin);
@@ -114,7 +114,7 @@ c2d		pm_c2d_add_fields_top(c2d origin, int nb)
 {
   c2d		dest;
 
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   if (!(dest = pm_c2d_copy_add_fields_top(origin, nb)))
     return (origin);
@@ -126,7 +126,7 @@ c2d		pm_c2d_add_field_down(c2d origin)
 {
   c2d		dest;
 
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   if (!(dest = pm_c2d_copy_add_fields_down(origin, 1)))
     return (origin);
@@ -138,7 +138,7 @@ c2d		pm_c2d_add_fields_down(c2d origin, int nb)
 {
   c2d		dest;
 
-  if (origin = NULL)
+  if (origin == NULL)
     return (NULL);
   if (!(dest = pm_c2d_copy_add_fields_down(origin, nb)))
     return (NULL);
