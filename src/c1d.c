@@ -74,7 +74,7 @@ c1d		pm_c1d_cut_at(c1d src, const char delim)
 {
   c1d		ret;
 
-  ret = strdup(src + pm_c1d_contains(src, delim));
+  ret = strdup(src + pm_c1d_contains(src, delim) + 1);
   free(src);
   return (ret);
 }
