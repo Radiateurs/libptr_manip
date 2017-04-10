@@ -32,6 +32,8 @@ c1d		pm_c1d_add_fields(c1d dest, int fields)
   int		i;
   c1d		ret;
 
+  if (dest == NULL)
+    return (malloc(sizeof(*ret) * (fields + 1)));
   if (!(ret = malloc(sizeof(*ret) * (strlen(dest) + fields + 1))))
     return (NULL);
   i = 0;
@@ -56,4 +58,9 @@ c1d		pm_c1d_concat_nproof(c1d dest, const c1d src)
   if (!(dest = strcat(dest, src)))
     return (NULL);
   return (dest);
+}
+
+c1d		pm_c1d_substr(c1d src, const char delim)
+{
+  return (strndup(src, pm_c1d_contains(src, delim)));
 }
