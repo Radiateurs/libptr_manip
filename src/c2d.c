@@ -95,7 +95,6 @@ c2d		pm_c2d_copy_add_fields_down(c2d origin, int fields)
       dest[i] = NULL;
       i++;
     }
-  dest[i + fields] = NULL;
   return (dest);
 }
 
