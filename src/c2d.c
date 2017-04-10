@@ -90,7 +90,7 @@ c2d		pm_c2d_copy_add_fields_down(c2d origin, int fields)
       dest[i] = strdup(origin[i]);
       i++;
     }
-  while (i < length + fields)
+  while (i < length + fields + 1)
     {
       dest[i] = NULL;
       i++;
